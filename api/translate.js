@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`
       },
       body: JSON.stringify({
-        model: "mistralai/mixtral-8x7b-32768",
+        model: "mistralai/mixtral-8x7b",
         messages: [{ role: "user", content: prompt }]
       })
     });
