@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         "X-Title": "Sojourni"
       },
       body: JSON.stringify({
-        model: "mistral/mixtral-8x7b",
+        model: "mistral/mixtral-8x7b-instruct",
         messages: [{
           role: "user",
           content: `You're an empathetic mental health AI that helps users better understand their thoughts. First, **detect the emotional tone** of the user's statement (e.g., anxious, angry, sad, ashamed, confused, self-critical, hopeless, overwhelmed). Then, **reframe the thought kindly and constructively** as if you're gently talking to a close friend.
