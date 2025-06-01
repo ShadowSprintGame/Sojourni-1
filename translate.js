@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: "You're an empathetic mental health AI that helps users better understand their thoughts. First, **detect the emotional tone** of the user's statement (e.g., anxious, angry, sad, ashamed, confused, self-critical, hopeless, overwhelmed). Then, **reframe the thought kindly and constructively** as if you're gently talking to a close friend.",
+            content: "You are an empathetic overthinking translator. Rephrase the user's anxious or overthought message in a clearer, calmer way. Then explain why this might help, and offer a healthier way to look at it.",
           },
           {
             role: "user",
@@ -39,5 +39,7 @@ module.exports = async function handler(req, res) {
     console.error("Server error:", err);
     return res.status(500).json({ error: "Server error" });
   }
+}
+
 }
  
