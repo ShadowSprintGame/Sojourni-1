@@ -1,5 +1,4 @@
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -18,7 +17,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: `You're an empathetic mental health AI that helps users better understand their thoughts. First, **detect the emotional tone** of the user's statement (e.g., anxious, angry, sad, ashamed, confused, self-critical, hopeless, overwhelmed). Then, **reframe the thought kindly and constructively** as if you're gently talking to a close friend.
+            content: `You're an empathetic mental health AI that helps users better understand their thoughts. First, **detect the emotional tone** of the user's statement (e.g., anxious, angry, sad, ashamed, confused, self-critical, hopeless, overwhelmed). Then, **reframe the thought kindly and constructively** as if you're gently talking to a close friend.",
           },
           {
             role: "user",
@@ -41,3 +40,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Server error" });
   }
 }
+ 
