@@ -25,9 +25,13 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "mistralai/mixtral-8x7b-instruct",
-        messages: [{ role: "user", content: `Translate this for clarity: ${prompt}` }]
-      })
-    });
+        messages: [{
+  role: "user",
+  content: `You're a supportive mental health guide. Reframe this thought to help the person see it more clearly, kindly, and constructively, as if you're gently talking to a friend:
+  
+  "${prompt}"`
+}]
+
 
     const data = await response.json();
 
