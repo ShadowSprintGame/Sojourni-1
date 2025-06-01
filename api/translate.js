@@ -13,7 +13,7 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "mistral/mixtral-8x7b-instruct",
+        model: "mistralai/mixtral-8x7b-instruct",
         messages: [
           {
             role: "system",
