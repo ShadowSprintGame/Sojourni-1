@@ -32,9 +32,8 @@ module.exports = async function handler(req, res) {
     if (!response.ok) {
       return res.status(500).json({ error: `OpenRouter API error: ${JSON.stringify(data)}` });
     }
-
-    return res.status(200).json({ result: data.choices?.[0]?.message?.content || "Translation failed." });
-
+console.log("OpenRouter full response:", JSON.stringify(data, null, 2));
+return res.status(200).json({ result: data.choices?.[0]?.message?.content || "Translation missing. Raw response: " + JSON.stringify(data) });
   } catch (err) {
     console.error("Server error:", err);
     return res.status(500).json({ error: "Server error" });
